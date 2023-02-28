@@ -18,6 +18,8 @@ export class AppComponent {
 
   namesArray: (string|number) []  = ['nicolas','julian','santi',15]
 
+  newName:  (string|number) =''
+
   toggelBtn(){
     this.btnDisabled = !this.btnDisabled
   }
@@ -35,5 +37,12 @@ export class AppComponent {
     const element = event.target as HTMLInputElement;
     this.person.name = element.value
   }
+
+  addName(){
+    this.namesArray.push(this.newName);
+    this.newName=''
+  }
+
+
 
 }
