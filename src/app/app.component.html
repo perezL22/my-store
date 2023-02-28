@@ -1,7 +1,7 @@
 <h1>*ngIf</h1>
 <input type="text" required [(ngModel)]="person.name"/>
 <p *ngIf="person.name === 'nicolas' ">Soy {{ person.name}}</p>
-<p *ngIf="person.name === 'julian' else elseBlock">Soy {{ person.name}}</p>
+<p *ngIf="person.name === 'julian'; else elseBlock">Soy {{ person.name}}</p>
 <ng-template #elseBlock>
   <p>bloqueelse</p>
 </ng-template>
