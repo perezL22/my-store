@@ -1,6 +1,8 @@
 <h1>NG Module</h1>
 <input type="text" required #nameInput="ngModel" [(ngModel)]="person.name" />
+<input type="number" min="18" max="50" required #ageInput="ngModel" [(ngModel)]="person.age" />
 <p>Valid: {{ nameInput.valid }}</p>
+<p>Valid: {{ ageInput.valid }}</p>
 <hr/>
 <button (click)="increAge()">incrementar edad</button>
 <button (click)="toggelBtn()">cambiar estado btn</button>
