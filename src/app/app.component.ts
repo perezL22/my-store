@@ -16,6 +16,8 @@ export class AppComponent {
     avatar: 'https://static1.abc.es/media/play/2020/09/29/avatar-kE4H--1200x630@abc.jpeg'
   }
 
+  namesArray: (string|number) []  = ['nicolas','julian','santi',15]
+
   toggelBtn(){
     this.btnDisabled = !this.btnDisabled
   }
