@@ -1,3 +1,15 @@
+<h1>*ngSwitch</h1>
+<div [ngSwitch]="person.name">
+  <p *ngSwitchCase="'nicolas'">
+    La persona es nicolas
+  </p>
+  <p *ngSwitchCase="'julian'">
+    La persona es julian
+  </p>
+  <p *ngSwitchCase="'camilo'">
+    La persona es camilo
+  </p>
+</div>
 <h1>*ngFor Object</h1>
 <div>
   <div *ngFor="let poduct of products">
