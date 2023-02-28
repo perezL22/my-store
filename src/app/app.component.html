@@ -1,7 +1,7 @@
 <h1>*ngFor</h1>
   <ul>
-      <li *ngFor="let name of namesArray">
-        {{name}}
+      <li *ngFor="let name of namesArray; index as i">
+        {{ i }} {{name}}
       </li>
   </ul>
 <hr/>
