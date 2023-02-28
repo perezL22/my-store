@@ -1,10 +1,13 @@
 <h1>Class Dinamic</h1>
-<input type="text" required #nameInput2="ngModel" [(ngModel)]="person.name"/>
+<input type="text" required #nameInput2="ngModel" [(ngModel)]="person.name" />
 <p class="message-error" [class.invalid]="nameInput2.invalid">
   El campo es requerido
 </p>
+<label>NOMBRE</label>
+<input type="text" required #nameInput3="ngModel" [(ngModel)]="person.name" />
+<p [style.font-style]="nameInput3.invalid?'italic':'normal'">texto texto</p>
 <h1>*ngSwitch</h1>
-<input type="text" required [(ngModel)]="person.name"/>
+<input type="text" required [(ngModel)]="person.name" />
 <div [ngSwitch]="person.name">
   <p *ngSwitchCase="'nicolas'">
     La persona es nicolas
@@ -22,48 +25,48 @@
 <h1>*ngFor Object</h1>
 <div class="products-grid">
   <div *ngFor="let poduct of products">
-      <img [src]="poduct.image"  width="250" alt="image">
-      <h2>{{ poduct.price }}€</h2>
-      <p>{{ poduct.name}}</p>
+    <img [src]="poduct.image" width="250" alt="image">
+    <h2>{{ poduct.price }}€</h2>
+    <p>{{ poduct.name}}</p>
   </div>
 </div>
 
 <h1>*ngFor</h1>
-<input type="text" required [(ngModel)]="newName"/>
+<input type="text" required [(ngModel)]="newName" />
 <button (click)="addName()">Add name</button>
-  <ul>
-    <li *ngIf="namesArray.length === 0">No Hay Elementos</li>
-      <li *ngFor="let name of namesArray; index as i">
-        {{ i }} {{name}}
-        <button (click)="deleteName(i)">Delete</button>
-      </li>
-  </ul>
-<hr/>
+<ul>
+  <li *ngIf="namesArray.length === 0">No Hay Elementos</li>
+  <li *ngFor="let name of namesArray; index as i">
+    {{ i }} {{name}}
+    <button (click)="deleteName(i)">Delete</button>
+  </li>
+</ul>
+<hr />
 <h1>*ngIf</h1>
-<input type="text" required [(ngModel)]="person.name"/>
+<input type="text" required [(ngModel)]="person.name" />
 <p *ngIf="person.name === 'nicolas' ">Soy {{ person.name}}</p>
 <p *ngIf="person.name === 'julian'; else elseBlock">Soy {{ person.name}}</p>
 <ng-template #elseBlock>
   <p>bloqueelse</p>
 </ng-template>
-<hr/>
+<hr />
 <h1>NG Module</h1>
 <input type="text" required #nameInput="ngModel" [(ngModel)]="person.name" />
 <input type="number" min="18" max="50" required #ageInput="ngModel" [(ngModel)]="person.age" />
 <p>Valid: {{ nameInput.valid }}</p>
 <p>Valid: {{ ageInput.valid }}</p>
-<hr/>
+<hr />
 <button (click)="increAge()">incrementar edad</button>
 <button (click)="toggelBtn()">cambiar estado btn</button>
 <button [disabled]="btnDisabled"> Enviar</button>
-<hr/>
+<hr />
 <h1>Propiedades </h1>
 <button [disabled]="btnDisabled"> Enviar</button>
-<input type="text" [value]="person.name" (keyup)="changeName($event)"/>
+<input type="text" [value]="person.name" (keyup)="changeName($event)" />
 <h1>{{ person.name}}</h1>
-<progress max="100" [value]="age" ></progress>
+<progress max="100" [value]="age"></progress>
 <img [src]="person.avatar" width="200" alt="avatar">
-<hr/>
+<hr />
 <h1>SDS</h1>
 <h2>{{ 'Hello '.repeat(5) }}</h2>
 <h2>3+3 ={{ 3+3 }}</h2>
@@ -71,19 +74,41 @@
 <br>
 <img src="{{img}}" width="200" alt="">
 <div class="box" (scroll)="onScroll($event)">
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum atque voluptas delectus natus ea sequi accusantium debitis, hic veniam officiis doloribus deserunt inventore soluta fugit sapiente unde nemo autem commodi!
-  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum aperiam vitae, eaque officiis iste voluptatibus reprehenderit praesentium maiores, vero, reiciendis quibusdam! Possimus et delectus adipisci quos illo beatae, praesentium vel.
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptate magnam sit fugiat illo hic totam obcaecati tempora fugit dolores, ea nobis velit odit esse eligendi aperiam consectetur temporibus reiciendis.
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum atque voluptas delectus natus ea sequi accusantium debitis, hic veniam officiis doloribus deserunt inventore soluta fugit sapiente unde nemo autem commodi!
-  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum aperiam vitae, eaque officiis iste voluptatibus reprehenderit praesentium maiores, vero, reiciendis quibusdam! Possimus et delectus adipisci quos illo beatae, praesentium vel.
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptate magnam sit fugiat illo hic totam obcaecati tempora fugit dolores, ea nobis velit odit esse eligendi aperiam consectetur temporibus reiciendis.
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum atque voluptas delectus natus ea sequi accusantium debitis, hic veniam officiis doloribus deserunt inventore soluta fugit sapiente unde nemo autem commodi!
-  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum aperiam vitae, eaque officiis iste voluptatibus reprehenderit praesentium maiores, vero, reiciendis quibusdam! Possimus et delectus adipisci quos illo beatae, praesentium vel.
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptate magnam sit fugiat illo hic totam obcaecati tempora fugit dolores, ea nobis velit odit esse eligendi aperiam consectetur temporibus reiciendis.
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum atque voluptas delectus natus ea sequi accusantium debitis, hic veniam officiis doloribus deserunt inventore soluta fugit sapiente unde nemo autem commodi!
-  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum aperiam vitae, eaque officiis iste voluptatibus reprehenderit praesentium maiores, vero, reiciendis quibusdam! Possimus et delectus adipisci quos illo beatae, praesentium vel.
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptate magnam sit fugiat illo hic totam obcaecati tempora fugit dolores, ea nobis velit odit esse eligendi aperiam consectetur temporibus reiciendis.Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum atque voluptas delectus natus ea sequi accusantium debitis, hic veniam officiis doloribus deserunt inventore soluta fugit sapiente unde nemo autem commodi!
-  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum aperiam vitae, eaque officiis iste voluptatibus reprehenderit praesentium maiores, vero, reiciendis quibusdam! Possimus et delectus adipisci quos illo beatae, praesentium vel.
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptate magnam sit fugiat illo hic totam obcaecati tempora fugit dolores, ea nobis velit odit esse eligendi aperiam consectetur temporibus reiciendis.
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, omnis? Aliquam molestiae laborum ducimus vel incidunt, illo eum veniam itaque architecto fugiat in, quo dolores ipsam ipsum placeat nostrum. Ratione!
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum atque voluptas delectus natus ea sequi accusantium
+  debitis, hic veniam officiis doloribus deserunt inventore soluta fugit sapiente unde nemo autem commodi!
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum aperiam vitae, eaque officiis iste voluptatibus
+  reprehenderit praesentium maiores, vero, reiciendis quibusdam! Possimus et delectus adipisci quos illo beatae,
+  praesentium vel.
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptate magnam sit fugiat illo hic totam obcaecati
+  tempora fugit dolores, ea nobis velit odit esse eligendi aperiam consectetur temporibus reiciendis.
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum atque voluptas delectus natus ea sequi accusantium
+  debitis, hic veniam officiis doloribus deserunt inventore soluta fugit sapiente unde nemo autem commodi!
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum aperiam vitae, eaque officiis iste voluptatibus
+  reprehenderit praesentium maiores, vero, reiciendis quibusdam! Possimus et delectus adipisci quos illo beatae,
+  praesentium vel.
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptate magnam sit fugiat illo hic totam obcaecati
+  tempora fugit dolores, ea nobis velit odit esse eligendi aperiam consectetur temporibus reiciendis.
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum atque voluptas delectus natus ea sequi accusantium
+  debitis, hic veniam officiis doloribus deserunt inventore soluta fugit sapiente unde nemo autem commodi!
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum aperiam vitae, eaque officiis iste voluptatibus
+  reprehenderit praesentium maiores, vero, reiciendis quibusdam! Possimus et delectus adipisci quos illo beatae,
+  praesentium vel.
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptate magnam sit fugiat illo hic totam obcaecati
+  tempora fugit dolores, ea nobis velit odit esse eligendi aperiam consectetur temporibus reiciendis.
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum atque voluptas delectus natus ea sequi accusantium
+  debitis, hic veniam officiis doloribus deserunt inventore soluta fugit sapiente unde nemo autem commodi!
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum aperiam vitae, eaque officiis iste voluptatibus
+  reprehenderit praesentium maiores, vero, reiciendis quibusdam! Possimus et delectus adipisci quos illo beatae,
+  praesentium vel.
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptate magnam sit fugiat illo hic totam obcaecati
+  tempora fugit dolores, ea nobis velit odit esse eligendi aperiam consectetur temporibus reiciendis.Lorem ipsum dolor
+  sit amet consectetur adipisicing elit. Earum atque voluptas delectus natus ea sequi accusantium debitis, hic veniam
+  officiis doloribus deserunt inventore soluta fugit sapiente unde nemo autem commodi!
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum aperiam vitae, eaque officiis iste voluptatibus
+  reprehenderit praesentium maiores, vero, reiciendis quibusdam! Possimus et delectus adipisci quos illo beatae,
+  praesentium vel.
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptate magnam sit fugiat illo hic totam obcaecati
+  tempora fugit dolores, ea nobis velit odit esse eligendi aperiam consectetur temporibus reiciendis.
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, omnis? Aliquam molestiae laborum ducimus vel incidunt,
+  illo eum veniam itaque architecto fugiat in, quo dolores ipsam ipsum placeat nostrum. Ratione!
 </div>
