@@ -15,9 +15,9 @@
   </p>
 </div>
 <h1>*ngFor Object</h1>
-<div>
+<div class="products-grid">
   <div *ngFor="let poduct of products">
-      <img [src]="poduct.image"  width="200" alt="image">
+      <img [src]="poduct.image"  width="250" alt="image">
       <h2>{{ poduct.price }}€</h2>
       <p>{{ poduct.name}}</p>
   </div>
