@@ -54,6 +54,8 @@ export class AppComponent {
     }
   ];
 
+  widthImage:number=100;
+
   toggelBtn(){
     this.btnDisabled = !this.btnDisabled
   }
