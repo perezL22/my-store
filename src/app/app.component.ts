@@ -43,6 +43,8 @@ export class AppComponent {
     this.newName=''
   }
 
-
+  deleteName(index : number){
+      this.namesArray.splice(index,1)
+  }
 
 }
