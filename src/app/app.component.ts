@@ -56,6 +56,13 @@ export class AppComponent {
 
   widthImage:number=100;
 
+
+  box={
+    width:100,
+    height:100,
+    background:'red'
+  }
+
   toggelBtn(){
     this.btnDisabled = !this.btnDisabled
   }
