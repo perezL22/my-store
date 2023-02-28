@@ -63,6 +63,13 @@ export class AppComponent {
     background:'red'
   }
 
+
+  register = {
+    name:'',
+    email:'',
+    password:''
+  }
+
   toggelBtn(){
     this.btnDisabled = !this.btnDisabled
   }
@@ -90,4 +97,7 @@ export class AppComponent {
       this.namesArray.splice(index,1)
   }
 
+  onRegister(){
+    console.log(this.register);
+  }
 }
